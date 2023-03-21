@@ -1,0 +1,30 @@
+
+
+<div class="card-content"  >
+
+
+  <main  *ngFor="let user  of data">
+    <div routerLink="/Profile/{{user.id}}" class = "card" >
+      <img [src]="user.profilePic" alt="">
+      <div class="card-content">
+        <h2>
+          {{user.firstName}}
+        </h2>
+        <p>
+          {{user.description}}
+        </p>
+        <button>
+<!--          <a href="#" class="button">-->
+<!--            DETAIL <i class='fas fa-arrow-right'></i>-->
+
+<!--          </a>-->
+        </button>
+
+      </div>
+    </div>
+
+  </main>
+
+  <app-infinite-scroll [threshold] = "0.1"  (scrolled)="loadMoreData()"></app-infinite-scroll>
+</div>
+<app-progress-bar></app-progress-bar>
